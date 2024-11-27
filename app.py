@@ -1,5 +1,5 @@
 from flask import Flask
-from test_aws_api.utils.run_doc import get_value 
+from run_doc import get_value 
 
 app = Flask(__name__)
 
