@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from utils.run_doc import get_value
-from fastapi.responses import PlainTextResponse
+import uvicorn
 
 app = FastAPI()
 
 @app.get("/")
-async def hello():
-    return "Hello World from FastAPI and AppRunner!"
+def index():
+    return {"message": "Hello World"}
 
 @app.get("/test")
 async def test():
@@ -15,5 +15,4 @@ async def test():
 # To run the app, use the command: uvicorn app:app --host 0.0.0.0 --port 8001
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
